@@ -1,0 +1,81 @@
+css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 160 20% 4%;
+    --foreground: 150 20% 95%;
+    --card: 160 15% 7%;
+    --card-foreground: 150 20% 95%;
+    --popover: 160 15% 7%;
+    --popover-foreground: 150 20% 95%;
+    --primary: 160 84% 39%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 160 15% 14%;
+    --secondary-foreground: 150 20% 90%;
+    --muted: 160 10% 15%;
+    --muted-foreground: 150 10% 55%;
+    --accent: 160 84% 39%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 160 15% 18%;
+    --input: 160 15% 18%;
+    --ring: 160 84% 39%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@layer utilities {
+  .no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(160, 15%, 7%);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(160, 15%, 25%);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(160, 84%, 39%);
+}
+
+/* Glow effects */
+.glow-green {
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.15), 0 0 60px rgba(16, 185, 129, 0.05);
+}
+
+.glow-green-strong {
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.25), 0 0 80px rgba(16, 185, 129, 0.1);
+}
